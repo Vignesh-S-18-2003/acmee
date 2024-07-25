@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Responsive Navigation</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
+            align-items: flex-start;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 200px;
+            height: 100vh;
+            padding-top: 20px;
+            transition: left 0.3s ease-in-out;
+        }
+        .menu a {
+            padding: 10px 20px;
+            text-decoration: none;
+            color: white;
+            display: block;
+        }
+        .menu a:hover {
+            background-color: #575757;
+        }
+        .hamburger {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: #333;
+            width: 100vw;
+            height: 10vh;
+            padding: 0 20px;
+            color: white;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        .active.menu {
+            left: 0;
+        }
+        @media (min-width: 600px) {
+            .menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                position: static;
+                width: 100%;
+                height: 10vh;
+                background-color: #333;
+                left: 0;
+                transition: none;
+            }
+            .hamburger {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="#">Blog</a>
+    </div>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
