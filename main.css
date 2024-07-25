@@ -395,6 +395,9 @@ min-height: 100vh;
     min-height: 100vh;
     background-attachment: fixed;
     background-color: rgb(64, 62, 159);
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 20vh;
   }
   .en-main div{
     width: 49vw;
@@ -404,6 +407,44 @@ min-height: 100vh;
     width: 80%;
 text-align: left;
 padding-left: 20%;
+  }
+  .en-main i{
+    font-size: 15px;
+  }
+  
+  .contact-table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between cells */
+    margin: 20px 0; /* Add space around the table */
+    font-family: Arial, sans-serif; /* Set font for the table */
+    font-size: 16px; /* Set font size */ /* Add shadow to the table */
+  }
+  
+  .contact-table th,
+  .contact-table td {
+    padding: 12px 15px; /* Add padding inside cells */ /* Add border to cells */
+    text-align: left; /* Align text to the left */
+    vertical-align: top; /* Align cell content to the top */
+  } .contact-table td i{
+    margin-top: -12px;
+  }
+  .contact-table thead th {
+    background-color: #007bff; /* Set background color for header */
+    color: #ffffff; /* Set text color for header */
+    text-align: center; /* Center align the header text */
+  }
+
+   .en-div2 {
+    color: white;
+    padding-left:10vw;
+  }
+  .en-div2 table{
+    margin-top: 8vh;
+  }
+  .en-div2 i{
+    background-color: red;
+    padding: 15px;
+    border-radius: 50%;
   }
   form input,textarea{
     width: 80%;
@@ -468,6 +509,10 @@ padding-left: 20%;
   footer h4 i{
     color: orange;
     font-size: 10px;
+  }
+  footer div h4 i{
+    margin-bottom: 10px;
+    font-size: 8px;
   }
   /* Responsive */
 
