@@ -502,6 +502,10 @@ padding-left: 20%;
   footer div li{
     margin-bottom: 10px;
   }
+  footer div li a {
+    text-decoration: none;
+    color: white;
+  }
   footer div img{
     width: 150px;
     height: 150px;
@@ -514,7 +518,125 @@ padding-left: 20%;
     margin-bottom: 10px;
     font-size: 8px;
   }
-  /* Responsive */
+  .oc div img{
+    margin-top: 20px;
+width: 220px;
+height:50px;
+  }
+
+.oc 
+{background-color: whitesmoke; 
+  width: 100vw;
+  min-height: 100vh;
+text-align: center;
+}
+.oc h3{
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+
+}
+.oc-main{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  row-gap: 20px;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.oc-con{
+  width: 280px;
+  height: 500px;
+  background-color: white;
+  
+  color: rgb(75, 75, 75);
+}
+.oc-con:hover{
+  background-color: rgb(27, 27, 138);
+  color: white;
+}
+.oc-main .oc-con img{
+  width: 250px;
+  height: 250px;
+}
+.oc-con{
+  flex-direction: column;
+}
+.oc-con p{
+  font-size: 12px;
+}
+.oc-main .oc-con h5{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+.oc-con img{
+  margin-bottom: 6vh;
+}
+.oc-con h2{
+  margin-bottom: 20px;
+}
+
+.oc-con p{
+  margin-bottom: 10px;
+}
+.b-main .b-div1{
+  width: 30vw;
+  height: 60vh;
+}
+.hero9{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  column-gap: 20px;
+}
+.hero9 img{
+width: 300px;
+height: 150px;
+margin: auto;
+
+}
+.hero9 div img{
+  width: 350px;
+  height: 300px;
+}
+.hero9 div{
+  margin-top: 10vh;
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+}
+.b-text{
+  padding: 10vw;
+}
+.b-text p{
+  line-height: 25px;
+  font-size: 14px;
+  color: rgb(75, 75, 75);
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.b-div1{
+  text-align: center;
+}
+.b-d h1{
+  margin-bottom: 4vh;
+  font-size: 32px;
+  color: rgb(2, 2, 85);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.b-d{
+  width: 50vw;
+  padding: 4vh 10vw;
+}
+.b-d h4{
+  line-height: 30px;
+  color: rgb(75, 75, 75);
+  font-size: 15px;
+  text-align: justify;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Responsive */
 
   @media (max-width: 750px) {
     .nav-items {
