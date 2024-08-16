@@ -7,6 +7,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <style>
+    
+.hall-demo{
+  width: 100vw;
+  padding-top:5vh ;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+.hall-demo h1{
+  margin-bottom: 5vh;
+  font-size: 35px;
+  color: rgb(27, 27, 138);
+}
+.hall-demo div{
+  margin-bottom: 5vh;
+}
+.hall-demo div select{
+  width: 150px;
+  cursor: pointer;
+  padding: 10px;
+}
+.hall-demo div select option{
+  padding: 5px;
+  cursor: pointer;
+}
+.hall-demo div iframe{
+  width: 60vw;
+  height: 65vh;
+}
+.hallbtns{
+  margin: auto;
+  width: 60vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hallbtns button{
+  background-color: transparent;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(27, 27, 138);
+}
+@media (max-width: 768px) {
+    #pdf-viewer {
+        height: 400px; /* Adjust height for smaller screens */
+    }
+}
+  </style>
+  
   </head>
   <body>
     <header>
@@ -73,11 +125,11 @@
               </a></li>
               <li><a href="#">Links & Downloads
               </a></li>
-              <li><a href="./Exhibition Venue.html">Exhibition Venue
+              <li><a href="#">Exhibition Venue
               </a></li>
               <li><a href="#">List of Exhibitors
               </a></li>
-              <li><a href="./Time_Shedule.html">Time Schedule
+              <li><a href="#">Time Schedule
               </a></li>
               <li><a href="#">Exhibitor Login
               </a></li>
@@ -147,65 +199,24 @@
         </ul>
       </div>
     </nav>
-      <section class="hero4 hero7">
-        <h2>ENQUIRY</h2>
-        <img src="Images/base.png" alt="" style="margin: 25px auto; width: 100px;height: 25px;">
-        <div class="en-main">
-          <div class="en-div1">
-            <form action="">
-              <div>
-                <input type="text" required>
-              </div>
-              <div>
-                <input type="text" required>
-              </div>
-              <div>
-                <input type="text" required>
-              </div>
-              <div>
-                <input type="text" required>
-              </div>
-              <div>
-                <textarea name="" id="" required></textarea>
-              </div>
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-          <div class="en-div2"><table class="contact-table">
-            <thead>
-              <tr>
-                <td><i class="fa-solid fa-location-dot"></i></td>
-                <td>ACMEE 2025 Secretariat</td>
-              </tr>
-              
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td>
-                  Ground Floor, SIDCO - AIEMA Tower, First Main Road,<br>
-                  Ambattur Industrial Estate,<br>
-                  Chennai - 600 058.
-                </td>
-              </tr>
-              <tr>
-                <td><i class="fa-solid fa-phone"></i></td>
-                <td>044 - 26250245</td>
-              </tr>
-              <tr>
-                <td><i class="fa-solid fa-mobile"></i> </td>
-                <td>+91 97909 74048</td>
-              </tr>
-              <tr>
-                <td><i class="fa-solid fa-message"></i> </td>
-                <td>info@acmee.in</td>
-              </tr>
-            </tbody>
-          </table>
-          
-          </div>
-        </div>
-        </section>
+    <section class="hall-demo">
+      <h1>Hall Selection</h1>
+      <div>
+          <select id="pdf-selector">
+              <option value="">Select a Hall</option>
+              <option value="./Hall/Hall A.pdf">HALL A</option>
+              <option value="./Hall/Hall B.pdf">HALL B</option>
+              <option value="./Hall/Hall C.pdf">HALL C</option>
+          </select>
+      </div>
+      <div>
+          <iframe id="pdf-viewer" src="./Hall/Hall A.pdf"></iframe>
+      </div>
+      <div class="hallbtns">
+          <button id="left" onclick="handleLeft()"></button>
+          <button id="right" onclick="handleRight()">Hall B</button>
+      </div>
+  </section>
         <footer>
           <div class="img"><img src="./Images/Untitled-design-49-e1704970346873-768x671.png" alt=""></div>
           <div>
@@ -264,6 +275,72 @@
       });
     });
     </script>
+    <script>
+      document.getElementById('pdf-selector').addEventListener('change', function() {
+          var selectedValue = this.value;
+          let left = document.getElementById('left');
+          let right = document.getElementById('right');
+          let pdfViewer = document.getElementById('pdf-viewer');
+
+          if (selectedValue === './Hall/Hall A.pdf') {
+              left.innerHTML = "";
+              right.innerHTML = "Hall B";
+          } else if (selectedValue === './Hall/Hall B.pdf') {
+              left.innerHTML = "Hall A";
+              right.innerHTML = "Hall C";
+          } else if (selectedValue === './Hall/Hall C.pdf') {
+              left.innerHTML = "Hall B";
+              right.innerHTML = "";
+          } else {
+              left.innerHTML = "";
+              right.innerHTML = "";
+          }
+
+          pdfViewer.src = selectedValue;
+      });
+
+      function handleLeft() {
+          var leftLabel = document.getElementById('left').innerHTML;
+          let left = document.getElementById('left');
+          let right = document.getElementById('right');
+          let pdfViewer = document.getElementById('pdf-viewer');
+
+          if (leftLabel === 'Hall B') {
+              left.innerHTML = "Hall A";
+              right.innerHTML = "Hall C";
+              pdfViewer.src = './Hall/Hall B.pdf';
+          } else if (leftLabel === 'Hall A') {
+              left.innerHTML = "";
+              right.innerHTML = "Hall B";
+              pdfViewer.src = './Hall/Hall A.pdf';
+          } else {
+              left.innerHTML = "Hall B";
+              right.innerHTML = "";
+              pdfViewer.src = './Hall/Hall B.pdf';
+          }
+      }
+
+      function handleRight() {
+          var rightLabel = document.getElementById('right').innerHTML;
+          let left = document.getElementById('left');
+          let right = document.getElementById('right');
+          let pdfViewer = document.getElementById('pdf-viewer');
+
+          if (rightLabel === 'Hall B') {
+              left.innerHTML = "Hall A";
+              right.innerHTML = "Hall C";
+              pdfViewer.src = './Hall/Hall B.pdf';
+          } else if (rightLabel === 'Hall C') {
+              left.innerHTML = "Hall B";
+              right.innerHTML = "";
+              pdfViewer.src = './Hall/Hall C.pdf';
+          } else {
+              left.innerHTML = "Hall B";
+              right.innerHTML = "";
+              pdfViewer.src = './Hall/Hall B.pdf';
+          }
+      }
+  </script>
   </body>
 </html>
 

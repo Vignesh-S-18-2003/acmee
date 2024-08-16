@@ -579,8 +579,11 @@ text-align: center;
   margin-bottom: 10px;
 }
 .b-main .b-div1{
-  width: 30vw;
-  height: 60vh;
+  width: 40vw;
+  min-height: 35vh;
+}
+.b-main .b-div2{
+  width: 40vw;
 }
 .hero9{
   display: flex;
@@ -606,8 +609,15 @@ margin: auto;
   flex-wrap: wrap;
   row-gap: 20px;
 }
+.b-main{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .b-text{
-  padding: 10vw;
+  padding-top: 4vh;
+  padding-left: 17vw;
+  padding-right: 17vw;
 }
 .b-text p{
   line-height: 25px;
@@ -615,26 +625,183 @@ margin: auto;
   color: rgb(75, 75, 75);
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: justify;
 }
 .b-div1{
   text-align: center;
 }
 .b-d h1{
-  margin-bottom: 4vh;
-  font-size: 32px;
+  margin-bottom: 3vh;
+  font-size: 34px;
   color: rgb(2, 2, 85);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .b-d{
-  width: 50vw;
-  padding: 4vh 10vw;
+  padding: 4vh 8vw;
+  padding-bottom: 0;
 }
 .b-d h4{
-  line-height: 30px;
+  line-height: 23px;
   color: rgb(75, 75, 75);
   font-size: 15px;
   text-align: justify;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.b-d table{
+  text-align: left;
+}
+.b-d table tr th{
+font-size: 23px;
+color: rgb(27, 27, 138);
+}
+.b-d table td{
+  padding: 5px auto;
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  color: rgb(75, 75, 75);
+} 
+
+.foot{
+  height: 5vh;
+  padding: 25px;
+}
+.hero10{
+  padding-left: 20vw;
+  padding-right: 20vw;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.hero10 div{
+  text-align: center;
+  width: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.hero10 img{
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+.hero10 p{
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: rgb(114, 114, 114)
+}
+.hero11 img{
+  width: 50vw;
+  height: 120px;
+}
+.hero12 .div1{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(19, 95, 180);
+}
+.hero12 .div1 h1{
+  color: black;
+  margin-top: 15px;
+}
+.hero12 div img{
+  margin: auto;
+  width: 250px;
+  height: 50px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.hero12 .div2{
+  margin-top: 10vh;
+}
+.divf {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-bottom: 20px;}
+.divf div{
+  text-align: center;
+  min-width: 300px;
+  padding: 10vh 25px;
+ box-shadow: 0 0 1px 0 rgb(185, 185, 185);
+}
+.divf div h3{
+  margin-bottom: 5vh;
+}
+.divf p{
+  color: rgb(114, 114, 114);
+}
+
+.divif div img{
+  width: 70px;
+  height: 70px;
+}
+.divif{
+  padding-left: 20vw;
+  padding-right: 20vw;
+  color: rgb(114, 114, 114);
+  font-size: 14px;
+  font-weight: bold;
+}
+.divif div h3 a{
+text-decoration: none;
+font-weight: bold;
+color: rgb(240, 71, 155);
+}
+.divif div h4{
+  font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+.divif div h3{
+  text-align: justify;
+  line-height: 25px;
+}
+.divf div:hover {
+  
+  color: white;
+  background: linear-gradient(90deg, rgba(37,95,226,1) 30%, rgba(106,53,255,1) 68%);
+}
+
+.divf div:hover p {
+  color: white; /* Or any color you want */
+}
+.divf div p:hover{
+  color: white;
+}
+.hall-demo{
+  width: 100vw;
+  padding-top:5vh ;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+.hall-demo h1{
+  margin-bottom: 5vh;
+  font-size: 35px;
+  color: rgb(27, 27, 138);
+}
+.hall-demo div{
+  margin-bottom: 5vh;
+}
+.hall-demo div select{
+  width: 150px;
+  cursor: pointer;
+  padding: 10px;
+}
+.hall-demo div select option{
+  padding: 5px;
+  cursor: pointer;
+}
+.hall-demo div iframe{
+  width: 60vw;
+  height: 65vh;
+}
+.herox{
+  width: 60vw;
+  margin: auto;
 }
 /* Responsive */
 
@@ -769,6 +936,9 @@ margin: auto;
       .hero3{
         min-height: 60vh;
       }
+      .b-d{
+        width: 100%;
+      }
       .hero3 div{
         width: 90%;
       }
@@ -776,5 +946,20 @@ margin: auto;
         font-size: 13px;
         line-height: 20px;
       } 
+      .b-main .b-div1{
+        width: 100vw;
+      }
+      .divf {
+        grid-template-columns: 1fr;
+        grid-gap: 25px; /* Optionally reduce gap for mobile */
+      }
+    
+      .divf div {
+        padding: 5vh 15px; /* Adjust padding for smaller screens */
+      }
+      .hero11 img{
+        width: 80vw;
+        height: 70px;
+      }
   }
   
