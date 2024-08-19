@@ -18,6 +18,8 @@
     position: sticky;
     top: 0;
     right: 0;
+    
+    z-index: 1000;
   }
   
   nav svg {
@@ -96,7 +98,7 @@
     border-radius: 4px;
     width: 200px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+    z-index: 1000;
   }
   
   .dropdown-menu li {
@@ -277,9 +279,8 @@
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   .hero4 img{
-    margin-top: 20px;
     width: 200px;
-    height: 40px;
+    height: 30px;
   }
   .g-main{
     display: flex;
@@ -305,7 +306,8 @@
     line-height: 25px;
     font-size: 22px;
   }
-  .g2 ul{padding: 3vh 8vw ;
+  .g2 ul{
+    padding: 3vh 8vw ;
     list-style-type: disc;
   }
   .g2 ul li{
@@ -320,11 +322,12 @@
   .dummy{
     height: 30vh;
   }
+  
   .hero5{
     width: 100vw;
     background-color: rgb(64, 62, 159);
     min-height: 100vh;
-    padding: 20vh 10vw;
+    padding: 15vh 10vw;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -332,13 +335,13 @@
   }
   .hero5 img{
     margin: auto;
-    width: 80%;
-    height: 80%;
+    width: 70%;
+    height: 70%;
   }
   .hero5 a{
     text-decoration: none;
     font-weight: bold;
-    color: white;
+    color: #ffffff;
     min-width:200px ;
     max-width: 400px;
     margin: auto;
@@ -348,28 +351,30 @@
   }
   .ac-main div{
 width: 49vw;
-min-height: 100vh;
+min-height: 50vh;
   }
   .ac-main div img{
-    width: 70%;
-    min-height: 60%;
+    width: 35vw;
+    height: 80%;
   }
   .ac-main{
-    margin-top: 10vh;
+    margin-top: 2vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
   .ac-div1{
-    padding-top: 20vh;
+    padding-top: 10vh;
   }
   .ac-div2{
     background-color:rgb(64, 62, 159);
   }
   .ac-div2 div{
     text-align: left;
-    padding: 20% 15%;
+    padding: 10% 10%;
     color: white;
+    
+    line-height: 25px;
   }
   .ac-div2 p{
     text-align: justify;
@@ -411,7 +416,27 @@ padding-left: 20%;
   .en-main i{
     font-size: 15px;
   }
+
+  .en-main .en-div1 input,textarea{
+    margin-top: 10px;
+  }
+
+  .en-main label{
+    font-weight: bold;
+    color: white;
+  }
+
+  .en-main label span{
+    color: red;
+  }
   
+  .en-main form button{
+    background-color: red;
+    border: none;
+    font-size:12px;
+    font-weight: bold;
+    color: white;
+  }
   .contact-table {
     width: 100%;
     border-collapse: collapse; /* Remove space between cells */
@@ -481,7 +506,7 @@ padding-left: 20%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 20vh;
+    margin-top: 5vh;
     width: 100vw;
     min-height: 30vh;
     
@@ -803,6 +828,31 @@ color: rgb(240, 71, 155);
   width: 60vw;
   margin: auto;
 }
+#slideshow { /* Set the height of the slideshow */
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  
+  z-index: 1;
+  height: 90vh;
+}
+
+#slideshow img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1; 
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#slideshow img.active {
+  
+  z-index: 10;
+  opacity: 1;
+}
 /* Responsive */
 
   @media (max-width: 750px) {
@@ -819,7 +869,7 @@ color: rgb(240, 71, 155);
       padding: 2rem;
       left: -250px;
       transition: all ease-in-out 1s;
-      z-index: 99; /* Ensure nav items are above other content */
+      z-index: 1000; /* Ensure nav items are above other content */
     }
     .nav-items a{
       color: rgba(6,23,99,1);
@@ -893,6 +943,7 @@ color: rgb(240, 71, 155);
       left: 0;
     }
   
+
     /* Mobile dropdown styles */
     .dropdown-menu {
       position: relative;
@@ -961,5 +1012,19 @@ color: rgb(240, 71, 155);
         width: 80vw;
         height: 70px;
       }
+      
+    .ac-div1 img{
+      width: 300px;
+      height: 300px;
+    }
+  .ac-main div img{
+    width: 60%;
+    height: 80%;
+  }
+  
+  .ac-div1{
+    margin-top: -7vh;
+    padding-top: 2vh;
+  }
   }
   

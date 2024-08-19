@@ -175,7 +175,21 @@
       <img src="Images/1111-removebg-preview.png" alt=""><br>
       <img src="Images/base.png" alt="" style="margin: 25px auto; width: 100px;height: 25px;">
       <div class="g-main">
-        <div class="g1"></div>
+        <div class="g1" id="slideshow">
+          <img src="images/1.jpg" class="active">
+          <img src="images/2.jpg">
+          <img src="images/3.jpg">
+          <img src="images/4.jpg">
+          <img src="images/5.jpg">
+          <img src="images/6.jpg">
+          <img src="images/7.jpg">
+          <img src="images/8.jpg">
+          <img src="images/9.jpg">
+          <img src="images/10.jpg">
+          <img src="images/11.jpg">
+          <img src="images/12.jpg">
+      
+        </div>
         <div class="g2">
           <h2>HIGHLIGHTS OF LAST EDITION ACMEE 2023 held in Chennai during 15th - 19th June 2023</h2>
           <ul>
@@ -204,12 +218,10 @@
       <h4><a href="">MORE</a></h4>
       
     </section>
-    <div class="dummy"></div>
     
     <section class="hero2 hero6">
       <div class="he-2">
         <img src="Images/image__3_-removebg-preview.png" alt="">
-        
       </div>
       <h1>ABOUT THE ORGANISERS
       </h1>
@@ -237,19 +249,24 @@
           <div class="en-div1">
             <form action="">
               <div>
+                <label for="">Name<span>*</span></label><br>
                 <input type="text" required>
               </div>
               <div>
+                <label for="">Company Name<span>*</span></label><br>
                 <input type="text" required>
               </div>
               <div>
+                <label for="">Email Id<span>*</span></label><br>
                 <input type="text" required>
               </div>
               <div>
+                <label for="">Cell No<span>*</span></label><br>
                 <input type="text" required>
               </div>
               <div>
-                <textarea name="" id="" required></textarea>
+                <label for="">Remarks</label><br>
+                <textarea name="" id="" required></textarea><br>
               </div>
               <button type="submit">Submit</button>
             </form>
@@ -346,6 +363,17 @@
         });
       });
     });
+    let currentIndex = 0;
+    const images = document.querySelectorAll('#slideshow img');
+    const totalImages = images.length;
+
+    function showNextImage() {
+        images[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % totalImages;
+        images[currentIndex].classList.add('active');
+    }
+
+    setInterval(showNextImage, 3000);
     </script>
   </body>
 </html>
