@@ -17,10 +17,30 @@
           <img class="img2" src="Images/Untitled-design-46-768x768.png" alt="">
           <img class="img3" src="Images/UFI-International-Event-1-768x768.png" alt="">
         </div>
-        <div class="texts">
+        <!-- <div class="texts">
           <div class="text1"><a href="">Floor Plan</a><a href="">Brochure</a></div>
           <div class="text2"><a href="">Participation Charges</a><a href="">Sponsorship Options</a><a href="">Exhibitor Registration
-          </a></div>
+          </a>
+        </div>
+        </div> -->
+        <div class="texts">
+          <div class="t"><h2>India's Premier International Machine Tools Show</h2></div>
+          <div id="slideshow2">
+            <img src="Images/1.jpg" class="active">
+            <img src="Images/2.jpg">
+            <img src="Images/3.jpg">
+            <img src="Images/4.jpg">
+            <img src="Images/5.jpg">
+            <img src="Images/6.jpg">
+            <img src="Images/7.jpg">
+            <img src="Images/8.jpg">
+            <img src="Images/9.jpg">
+            <img src="Images/10.jpg">
+            <img src="Images/11.jpg">
+            <img src="Images/12.jpg">
+            <img src="Images/13.JPG">
+            <img src="Images/14.JPG">
+          </div>
         </div>
       </div>
     </header>
@@ -179,7 +199,7 @@
       <img src="Images/base.png" alt="" style="margin: 25px auto; width: 100px;height: 25px;">
       <div class="g-main">
         <div class="g1" id="slideshow">
-         <img src="Images/1.jpg" class="active">
+          <img src="Images/1.jpg" class="active">
           <img src="Images/2.jpg">
           <img src="Images/3.jpg">
           <img src="Images/4.jpg">
@@ -379,6 +399,19 @@
     }
 
     setInterval(showNextImage, 3000);
+
+    
+    let currentInde = 0;
+    const image = document.querySelectorAll('#slideshow2 img');
+    const totalImage = image.length;
+
+    function showNextImage2() {
+        image[currentInde].classList.remove('active');
+        currentInde = (currentInde + 1) % totalImage;
+        image[currentInde].classList.add('active');
+    }
+
+    setInterval(showNextImage2, 3000);
     </script>
   </body>
 </html>
