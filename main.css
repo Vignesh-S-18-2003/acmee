@@ -853,6 +853,9 @@ color: rgb(240, 71, 155);
   z-index: 10;
   opacity: 1;
 }
+.ac-mee{
+  display: none;
+}
 /* Responsive */
 
   @media (max-width: 750px) {
@@ -942,7 +945,18 @@ color: rgb(240, 71, 155);
     #check:checked ~ .nav-items {
       left: 0;
     }
-  
+    .acmee{
+      display: none;
+    }
+    .ac-mee{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100vw;
+    }
+    .ac-mee img{
+      width: 100vw;
+    }
 
     /* Mobile dropdown styles */
     .dropdown-menu {
