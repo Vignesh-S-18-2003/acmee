@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <title>Register Form-ACMEE</title>
+
+    <style>
+        @media only screen and (max-width: 600px) {
+    /* Styles for smaller screens go here */
+    .grid-cols-4 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    /* Add similar adjustments for other elements as needed */
+}
+body{
+    background-color: rgb(27, 27, 138);
+}
+
+.form-x{
+    width: 60vw;
+}
+#main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#main div{
+    margin-bottom: 10px;
+}
+@media all and (max-width:480px) {
+    #main{
+        padding: 0;
+    grid-template-columns: 1fr;   
+    }
+    
+}
+    </style>
+</head>
+<body >
+    <div class="container mx-auto mt-8 form-x" style="background-color: rgb(238, 237, 237); border-radius: 15px; padding-top: 5vh;">
+    <h3 class="text-center text-3xl font-bold mb-10">Visitor Registration - ACMEE 2025</h3>
+
+    <div class="bg-light form-xrounded-3 mb-3 border-bottom" style="padding-bottom: 25px;">
+
+    <form class=" mx-auto" style="padding-right: 3vw; padding-left: 3vw;" id="userForm">
+
+
+                <div class=" mb-3 mt-5" style="border:2px solid rgb(27, 27, 138);"></div>
+            
+<form>  
+    <h1 class="text-xl mb-4 font-bold">Basic Information</h1>
+    <div id="main" class="">  
+    
+        <div id="loader" class="hidden fixed top-0 left-0 w-screen h-screen bg-opacity-50 bg-gray-900 flex justify-center items-center">
+            <!-- Add your loader content here, e.g., a spinning icon or text -->
+            Loading...
+        </div>
+      
+        <div class="flex flex-row">
+                
+            <select id="title" style="background-color: rgb(27, 27, 138); color: white; font-weight: bold;" name="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required>
+                <option value="" selected>Title *</option>
+                <option value="mr">Mr</option>
+                <option value="ms">Ms</option>
+                <option value="m/s">M/s</option>
+                <option value="mrs">Mrs.</option>
+            </select>
+    
+            <input type="text" id="firstname" name="firstname" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Name*" required>
+    
+        </div>
+        <div>
+            
+            <input type="text" id="designation" name="designation" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   placeholder="Designation" required>
+          
+                </div>
+    </div>
+    
+        <div id="main" class="grid grid-cols-2 gap-1 justify-evenly">  
+           
+                 <div>
+                    <input type="tel" id="mobile" oninput="this.value = this.value.replace(/[^0-9+()]/g, '');" name="mobile" class="bg-gray-50 mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"   placeholder="Mobile Number With Country Code*" required>
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" class="bg-gray-50 mt-3 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Email*" required>
+                </div>
+                </div>
+               
+                <div class=" mb-3 mt-5" style="border:2px solid rgb(27, 27, 138);"></div>
+
+
+                <h1 class="text-xl mb-4 font-bold">Company Information</h1>
+                <div id="main" class="">  
+                    <div>
+                        <input type="text" id="company_name" name="company_name"  class="bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Company Name*" required>
+                    </div>
+                    <div>
+                        <input type="text" id="address" name="address" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Address*" required>
+                    </div>
+                   
+                    </div>
+
+
+                         <div id="main" class="">  
+                            <div>
+
+
+                                <input type="text" id="country" name="country" class="bg-gray-50 border mb-5 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Country*" required>
+
+                            
+                                  </div>
+                                  <div>
+                                  
+
+
+                                    <input type="text" id="state" name="state" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="State*" required>
+
+                                         </div>
+                                 </div>
+
+
+                                 <div id="main" class="">  
+                                    <div>
+                                    
+
+
+
+                                     <input type="text" id="city" name="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="City*" required>
+
+                                          </div>
+                                          <div>
+                                            <input type="tel" id="pin" oninput="this.value = this.value.replace(/[^0-9+()]/g, '');" name="pin" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pin/Zip*" required>
+                                        </div>  
+                                         </div>
+                                         <div id="main" class="grid grid-cols-1 gap-1 justify-evenly" style="display: grid; grid-template-columns: 1fr;">  
+                                                <div>
+                                            
+        
+        
+        
+                                             <input type="text" id="interest" name="interest" class="bg-gray-50 border w-full  border-gray-300 text-gray-900 text-sm rounded-lg mt-3 focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Products of Interest * (Choose atlease any one)" required>
+                                             <!-- <input type="text" id="city" name="city" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder=" Select city*" required> -->
+
+                                                  </div>
+      </div>
+
+
+
+
+      
+      <div id="main" class="grid grid-cols-1 gap-1 justify-evenly" style="display: grid; grid-template-columns: 1fr;"> 
+      <div class="ml-10 mt-5">
+
+
+                                                    
+        <input id="vue-checkbox-list" type="checkbox" value="Machine tools"  class="w-4 h-4 ml-5 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="vue-checkbox-list" class=" py-3 ms-2 ml-5 text-sm font-medium text-gray-900 dark:text-gray-300">Machine tools</label>
+    
+
+        <input id="react-checkbox-list" type="checkbox" value="Metal Forming"    class="w-4 ml-2     h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="react-checkbox-list" class="w-full py-3 ms-2 ml-2  text-sm font-medium text-gray-900 dark:text-gray-300">Metal Forming</label>
+
+
+        <input id="angular-checkbox-list" type="checkbox" value="Industrial Robotics"   class="w-4 h-4  ml-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="angular-checkbox-list" class="w-full py-3 ms-2 ml-5  text-sm font-medium text-gray-900 dark:text-gray-300">Industrial Robotics</label>
+
+
+        <input id="laravel-checkbox-list" type="checkbox" value="Digital Manufacturing"   class="w-4 h-4 ml-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="laravel-checkbox-list" class="w-full py-3 ms-2 ml-5  text-sm font-medium text-gray-900 dark:text-gray-300">Digital Manufacturing</label>
+ 
+
+        <input id="laravel-checkbox-list" type="checkbox" value="Metrology"   class="w-4 h-4 text-blue-600 ml-5 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="laravel-checkbox-list" class="w-full py-3 ms-2 ml-5  text-sm font-medium text-gray-900 dark:text-gray-300">Metrology</label>
+
+<input id="laravel-checkbox-list" type="checkbox" value="Others"   class="w-4 h-4 ml-3 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+        <label for="laravel-checkbox-list" class="w-full py-3 ms-2 ml-5  text-sm font-medium text-gray-900 dark:text-gray-300">Others</label>
+
+</div>
+</div>
+                                              
+
+
+                                         
+
+       
+      
+<div id="submit" >
+  <button type="button" id="click" onclick="submitUserForm()" style="background-color: rgb(27, 27, 138);" class="text-white mt-3 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
+</div>
+</form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+<script>
+    function submitUserForm(event) {
+        // Prevent default form submission
+
+        const formData = new FormData(document.getElementById('userForm'));
+        let formElements = document.getElementById('userForm').elements;
+        var button = document.getElementById('click');
+
+        // Disable the button before making the fetch request
+        button.disabled = true;
+
+        for (let i = 0; i < formElements.length; i++) {
+            let element = formElements[i];
+
+            if (element.required && !formData.get(element.name) && (element.name !== "pan_no")
+            && (element.name !== "product_profile2") && (element.name !== "product_profile3")
+          && (element.name !== "other_product")  && (element.name !== "overseas_company") && (element.name !== "overseas_country")) {
+                
+
+                Swal.fire({
+    icon: "error",
+    title: `${element.name.replace(/_/g, ' ')} is required.`,
+    showConfirmButton: false,
+  timer: 1500
+  
+});
+
+
+               
+                    // Set focus back to the empty input field after a small delay
+                    setTimeout(() => {
+                        element.focus();
+                    }, 100);
+            
+               
+               
+                // Enable the button after displaying the alert
+                button.disabled = false;
+                
+                return; // Stop the function after focusing on the first empty field
+            }
+
+            if (element.type === 'email' && !isValidEmail(formData.get(element.name))) {
+    Swal.fire({
+        icon: "error",
+        title: "Invalid email format.",
+        showConfirmButton: false,
+        timer: 1500
+    });
+    setTimeout(() => {
+        element.focus();
+    }, 100);
+    button.disabled = false;
+    return;
+}
+
+
+if (element.type === "radio" && !document.querySelector(`input[name="${element.name}"]:checked`))
+   
+     {
+        Swal.fire({
+            icon: "error",
+            title: `${element.name.replace(/_/g, ' ')} is required.`,
+            showConfirmButton: false,
+            timer: 1500
+        });
+
+        // Set focus back to the empty input field after a small delay
+        setTimeout(() => {
+            element.focus();
+        }, 100);
+
+        // Enable the button after displaying the alert
+        button.disabled = false;
+
+        return; // Stop the function after focusing on the first empty field
+    }
+
+
+
+
+
+
+
+
+function isValidEmail(email) {
+    // Add your email validation logic here
+    // Example: Use a regular expression for basic email format validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+
+
+
+
+
+        }
+       
+Swal.showLoading();
+
+        fetch('https://api.acmee.in/api/insertVistorEnquiry', {
+            
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            Swal.hideLoading();
+            console.log('Success:', data);
+
+            // Enable the button after the fetch request is processed
+            button.disabled = false;
+
+            if (data.status === false) {
+                if (Array.isArray(data.errors)) {
+                    alert('Error: ' + data.errors.join(', '));
+                  
+                } else if (typeof data.errors === 'string') {
+
+          
+    Swal.fire({
+  icon: "error",
+  title: data.errors
+});
+
+
+                    
+                }
+            } else {
+
+                Swal.fire({
+            icon: 'Success',
+            title: 'Registered Successfully'
+        });
+             
+
+Swal.hideLoading();
+button.disabled = false;
+
+
+setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+
+            button.disabled = false;
+
+
+        Swal.fire({
+        icon: 'error',
+        title: 'Error',
+        text: 'please Contact the  admin'
+    });
+    Swal.hideLoading();
+
+        });
+    }
+
+    // Attach the event listener with 'submitUserForm' to the form's submit event
+    document.getElementById('userForm').addEventListener('submit', submitUserForm, { once: true });
+</script>
+
+
+ <!-- <script>
+    $(document).ready(function() {
+        $("#rules").click(function () {
+            if ($(this).is(":checked")) {
+                $("#submit").show();
+            } else {
+                $("#submit").hide();
+            }
+        });
+    });
+</script> -->
+
+
+
+
+
+
+
+</script>
+
+
+<script>
+   document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
+    checkbox.addEventListener('change', function() {
+        updateInputValue();
+    });
+});
+
+function updateInputValue() {
+    const selectedInterests = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(function(checkbox) {
+        return checkbox.value;
+    });
+    document.getElementById('interest').value = selectedInterests.join(', ');
+}
+
+
+</script>
+   
+   
+<!--<div style="float:right;">-->
+<!--     <a href='http://www.freevisitorcounters.com'>here</a> <script type='text/javascript' src='https://www.freevisitorcounters.com/auth.php?id=11ae37b4a01d8434b5c460fbbfa34c509192b7a2'></script>-->
+<!--<script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1139915/t/2"></script>-->
+<!--</div>-->
+
+
+
+   
+</body>
+</html>
