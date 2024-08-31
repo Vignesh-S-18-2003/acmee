@@ -281,66 +281,141 @@
           let left = document.getElementById('left');
           let right = document.getElementById('right');
           let pdfViewer = document.getElementById('pdf-viewer');
-
-          if (selectedValue === './Hall/Hall A.pdf') {
-              left.innerHTML = "";
-              right.innerHTML = "Hall B";
-          } else if (selectedValue === './Hall/Hall B.pdf') {
-              left.innerHTML = "Hall A";
-              right.innerHTML = "Hall C";
-          } else if (selectedValue === './Hall/Hall C.pdf') {
-              left.innerHTML = "Hall B";
-              right.innerHTML = "";
-          } else {
-              left.innerHTML = "";
-              right.innerHTML = "";
+  
+          switch (selectedValue) {
+              case './Hall/Hall A.pdf':
+                  left.innerHTML = "";
+                  right.innerHTML = "Hall B";
+                  break;
+              case './Hall/Hall B.pdf':
+                  left.innerHTML = "Hall A";
+                  right.innerHTML = "Hall C";
+                  break;
+              case './Hall/Hall C.pdf':
+                  left.innerHTML = "Hall B";
+                  right.innerHTML = "Hall D";
+                  break;
+              case './Hall/Hall D.pdf':
+                  left.innerHTML = "Hall C";
+                  right.innerHTML = "Hall E";
+                  break;
+              case './Hall/Hall E.pdf':
+                  left.innerHTML = "Hall D";
+                  right.innerHTML = "Hall F";
+                  break;
+              case './Hall/Hall F.pdf':
+                  left.innerHTML = "Hall E";
+                  right.innerHTML = "Hall G";
+                  break;
+              case './Hall/Hall G.pdf':
+                  left.innerHTML = "Hall F";
+                  right.innerHTML = "";
+                  break;
+              default:
+                  left.innerHTML = "";
+                  right.innerHTML = "";
+                  break;
           }
-
+  
           pdfViewer.src = selectedValue;
       });
-
+  
       function handleLeft() {
           var leftLabel = document.getElementById('left').innerHTML;
           let left = document.getElementById('left');
           let right = document.getElementById('right');
           let pdfViewer = document.getElementById('pdf-viewer');
-
-          if (leftLabel === 'Hall B') {
-              left.innerHTML = "Hall A";
-              right.innerHTML = "Hall C";
-              pdfViewer.src = './Hall/Hall B.pdf';
-          } else if (leftLabel === 'Hall A') {
-              left.innerHTML = "";
-              right.innerHTML = "Hall B";
-              pdfViewer.src = './Hall/Hall A.pdf';
-          } else {
-              left.innerHTML = "Hall B";
-              right.innerHTML = "";
-              pdfViewer.src = './Hall/Hall B.pdf';
+  
+          switch (leftLabel) {
+              case 'Hall B':
+                  left.innerHTML = "Hall A";
+                  right.innerHTML = "Hall C";
+                  pdfViewer.src = './Hall/Hall B.pdf';
+                  break;
+              case 'Hall A':
+                  left.innerHTML = "";
+                  right.innerHTML = "Hall B";
+                  pdfViewer.src = './Hall/Hall A.pdf';
+                  break;
+              case 'Hall C':
+                  left.innerHTML = "Hall B";
+                  right.innerHTML = "Hall D";
+                  pdfViewer.src = './Hall/Hall C.pdf';
+                  break;
+              case 'Hall D':
+                  left.innerHTML = "Hall C";
+                  right.innerHTML = "Hall E";
+                  pdfViewer.src = './Hall/Hall D.pdf';
+                  break;
+              case 'Hall E':
+                  left.innerHTML = "Hall D";
+                  right.innerHTML = "Hall F";
+                  pdfViewer.src = './Hall/Hall E.pdf';
+                  break;
+              case 'Hall F':
+                  left.innerHTML = "Hall E";
+                  right.innerHTML = "Hall G";
+                  pdfViewer.src = './Hall/Hall F.pdf';
+                  break;
+              case 'Hall G':
+                  left.innerHTML = "Hall F";
+                  right.innerHTML = "";
+                  pdfViewer.src = './Hall/Hall G.pdf';
+                  break;
+              default:
+                  left.innerHTML = "Hall B";
+                  right.innerHTML = "";
+                  pdfViewer.src = './Hall/Hall B.pdf';
+                  break;
           }
       }
-
+  
       function handleRight() {
           var rightLabel = document.getElementById('right').innerHTML;
           let left = document.getElementById('left');
           let right = document.getElementById('right');
           let pdfViewer = document.getElementById('pdf-viewer');
-
-          if (rightLabel === 'Hall B') {
-              left.innerHTML = "Hall A";
-              right.innerHTML = "Hall C";
-              pdfViewer.src = './Hall/Hall B.pdf';
-          } else if (rightLabel === 'Hall C') {
-              left.innerHTML = "Hall B";
-              right.innerHTML = "";
-              pdfViewer.src = './Hall/Hall C.pdf';
-          } else {
-              left.innerHTML = "Hall B";
-              right.innerHTML = "";
-              pdfViewer.src = './Hall/Hall B.pdf';
+  
+          switch (rightLabel) {
+              case 'Hall B':
+                  left.innerHTML = "Hall A";
+                  right.innerHTML = "Hall C";
+                  pdfViewer.src = './Hall/Hall B.pdf';
+                  break;
+              case 'Hall C':
+                  left.innerHTML = "Hall B";
+                  right.innerHTML = "Hall D";
+                  pdfViewer.src = './Hall/Hall C.pdf';
+                  break;
+              case 'Hall D':
+                  left.innerHTML = "Hall C";
+                  right.innerHTML = "Hall E";
+                  pdfViewer.src = './Hall/Hall D.pdf';
+                  break;
+              case 'Hall E':
+                  left.innerHTML = "Hall D";
+                  right.innerHTML = "Hall F";
+                  pdfViewer.src = './Hall/Hall E.pdf';
+                  break;
+              case 'Hall F':
+                  left.innerHTML = "Hall E";
+                  right.innerHTML = "Hall G";
+                  pdfViewer.src = './Hall/Hall F.pdf';
+                  break;
+              case 'Hall G':
+                  left.innerHTML = "Hall F";
+                  right.innerHTML = "";
+                  pdfViewer.src = './Hall/Hall G.pdf';
+                  break;
+              default:
+                  left.innerHTML = "Hall B";
+                  right.innerHTML = "";
+                  pdfViewer.src = './Hall/Hall B.pdf';
+                  break;
           }
       }
   </script>
+  
   </body>
 </html>
 
